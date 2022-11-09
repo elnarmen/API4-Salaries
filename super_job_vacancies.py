@@ -1,7 +1,6 @@
-import os
 import requests
-from dotenv import load_dotenv
-from functions_for_statistics import get_salary_statistics
+import os
+
 
 def predict_rub_salary_sj(vacancy):
     if vacancy['currency'] != 'rub':
@@ -41,7 +40,3 @@ def get_all_language_vacancies_sj(language):
         page += 1
     return all_vacancies, vacancies_found
 
-
-if __name__ == '__main__':
-    load_dotenv()
-    print(get_salary_statistics(get_all_language_vacancies_sj, predict_rub_salary_sj))

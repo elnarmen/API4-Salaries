@@ -1,5 +1,4 @@
 import requests
-from functions_for_statistics import get_salary_statistics
 
 
 def predict_rub_salary_hh(vacancy: dict):
@@ -39,9 +38,5 @@ def get_all_language_vacancies_hh(language: str):
         vacancies_found = page_payload['found']
         all_vacancies.extend(page_vacancies)
     return all_vacancies, vacancies_found
-
-
-if __name__ == '__main__':
-    print(get_salary_statistics(get_all_language_vacancies_hh, predict_rub_salary_hh))
 
 
