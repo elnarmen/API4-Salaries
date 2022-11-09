@@ -13,9 +13,9 @@ def get_table(title, salary_statistics):
 def main():
     title_hh = 'HaedHunter Moscow'
     title_sj = 'SuperJob Moscow'
-    print(get_table(title_sj, get_salary_statistics_sj))
-    print()
     print(get_table(title_hh, get_salary_statistics_hh))
+    print()
+    print(get_table(title_sj, get_salary_statistics_sj))
 
 
 if __name__ == '__main__':
