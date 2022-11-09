@@ -38,6 +38,7 @@ SuperJob не отдаст данные без авторизации. Вам п
 При регистрации приложения от вас потребуют указать сайт. Введите любой, они не проверяют.
 Ключ выглядит примерно так: 
 `v1.h002e16b85c34bcf7b2a478ac1a5c68fac32cb8ff57fcd579677d01e2eba075d4ae0c999a.20774ea98a8b18a1253b6e9bc289288078607a93`
+
 Далее создайте в папке с проектом файл **`.env`** и сохраните в переменную SUPERJOB_API_KEY полученный ключ:
 ```
 SUPERJOB_API_KEY = <ваш ключ>
@@ -49,4 +50,4 @@ python salaries.py
 ```
 Пример работы программы:
 
-(example)[]
+![alt text](https://github.com/elnarmen/API4-Salaries/blob/main/table_example.png)
