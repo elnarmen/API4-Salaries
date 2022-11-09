@@ -12,7 +12,7 @@ git clone https://github.com/elnarmen/API4-Salaries.git
 ## Настройка виртуального окружения
 Перейдите в папку с проектом:
 ```
-cd gjodjglvflgkrklkhsk
+cd API4-Salaries
 ```
 Далее введите команду:
 ```
