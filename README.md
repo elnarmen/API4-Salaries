@@ -7,7 +7,7 @@
 
 Затем введите команду:
 ```
-git clone https://github.com/elnarmen/API3
+git clone https://github.com/elnarmen/API4-Salaries.git
 ```
 ## Настройка виртуального окружения
 Перейдите в папку с проектом:
