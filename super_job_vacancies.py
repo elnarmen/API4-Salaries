@@ -45,13 +45,3 @@ def get_all_language_vacancies_sj(language):
 if __name__ == '__main__':
     load_dotenv()
     print(get_salary_statistics(get_all_language_vacancies_sj, predict_rub_salary_sj))
-
-d = {'Python': {'vacancies_found': 38, 'vacancies_processed': 14, 'average_salary': 126577},
-     'C': {'vacancies_found': 11, 'vacancies_processed': 4, 'average_salary': 147000},
-     'Java': {'vacancies_found': 10, 'vacancies_processed': 5, 'average_salary': 208400},
-     'C++': {'vacancies_found': 12, 'vacancies_processed': 4, 'average_salary': 159750},
-     'C#': {'vacancies_found': 3, 'vacancies_processed': 2, 'average_salary': 197500},
-     'JavaScript': {'vacancies_found': 34, 'vacancies_processed': 21, 'average_salary': 118003},
-     'PHP': {'vacancies_found': 21, 'vacancies_processed': 16, 'average_salary': 144245},
-     'Go': {'vacancies_found': 5, 'vacancies_processed': 0, 'average_salary': None},
-     'Kotlin': {'vacancies_found': 4, 'vacancies_processed': 3, 'average_salary': 229000}}
