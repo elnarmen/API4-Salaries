@@ -2,7 +2,7 @@ import requests
 
 
 def predict_rub_salary_hh(vacancy: dict):
-    if vacancy['salary'] is None:
+    if not vacancy['salary']:
         return None
     salary_details = vacancy['salary']
     if salary_details['currency'] != 'RUR':
