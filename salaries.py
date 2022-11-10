@@ -2,11 +2,18 @@ from terminaltables import AsciiTable, DoubleTable, SingleTable
 from salary_stastics import get_salary_statistics_hh, get_salary_statistics_sj
 
 
-def get_table(title, salary_statistics):
-    table_data_hh = [['Язык программирования', 'Вакансий найдено', 'Вакансий обработано', 'Средняя зарплата']]
-    table_data_hh.extend(
-        [[k, v['vacancies_found'], v['vacancies_processed'], v['average_salary']] for k, v in salary_statistics().items()])
-    table_instance = AsciiTable(table_data_hh, title)
+def get_table(title, get_salary_statistics):
+    salary_table = [['Язык программирования',
+                     'Вакансий найдено',
+                     'Вакансий обработано',
+                     'Средняя зарплата']]
+    salary_table.extend(
+        [[language_name,
+          salary_statistics['vacancies_found'],
+          salary_statistics['vacancies_processed'],
+          salary_statistics['average_salary']]
+         for language_name, salary_statistics in get_salary_statistics().items()])
+    table_instance = AsciiTable(salary_table, title)
     return table_instance.table
 
 
