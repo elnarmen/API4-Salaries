@@ -2,9 +2,8 @@ import os
 import requests
 
 
-def get_all_language_vacancies_sj(language):
+def get_all_language_vacancies_sj(language, superjob_api_key):
     url = 'https://api.superjob.ru/2.0/vacancies'
-    superjob_api_key = os.getenv('SUPERJOB_API_KEY')
     page = 0
     pages_numper = 5  # если параметр count в запросе = 100, API выдаст только 5 страниц
     other_results = True

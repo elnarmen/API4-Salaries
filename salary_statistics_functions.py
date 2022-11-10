@@ -19,11 +19,19 @@ def get_average_language_salaries(predict_salary, vacancies,
     return salaries_details
 
 
-def get_all_languages_salary(get_all_language_vacancies, predict_rub_salary, currency, salary_from, salary_to):
+def get_all_languages_salary(get_all_language_vacancies,
+                             predict_rub_salary,
+                             currency,
+                             salary_from,
+                             salary_to,
+                             superjob_api_key=None):
     languages = ['python', 'c', 'c#', 'c++', 'java', 'JavaScript', 'ruby', 'go', '1c']
     all_languages_salary = {}
     for language in languages:
-        vacancies, amount_of_vacancies = get_all_language_vacancies(language)
+        vacancies, amount_of_vacancies = get_all_language_vacancies(
+                                                    language,
+                                                    superjob_api_key=superjob_api_key
+                                                    )
         all_languages_salary[language] = get_average_language_salaries(
             predict_rub_salary,
             vacancies,
