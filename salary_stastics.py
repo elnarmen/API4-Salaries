@@ -21,13 +21,13 @@ def get_average_language_salaries(predict_salary, vacancies, amount_of_vacancies
     return salaries_details
 
 
-def get_salary_info(get_all_language_vacancies, predict_rub_salary):
+def get_all_languages_salary(get_all_language_vacancies, predict_rub_salary):
     languages = ['python', 'c', 'c#', 'c++', 'java', 'JavaScript', 'ruby', 'go', '1c']
-    salary_info = {}
+    all_languages_salary = {}
     for language in languages:
         vacancies, amount_of_vacancies = get_all_language_vacancies(language)
-        salary_info[language] = get_average_language_salaries(predict_rub_salary, vacancies, amount_of_vacancies)
-    return salary_info
+        all_languages_salary[language] = get_average_language_salaries(predict_rub_salary, vacancies, amount_of_vacancies)
+    return all_languages_salary
 
 def get_salary_statistics_sj():
     return get_salary_info(get_all_language_vacancies_sj, predict_rub_salary_sj)
