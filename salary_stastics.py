@@ -1,4 +1,3 @@
-from dotenv import load_dotenv
 from hh_ru_vacancies import predict_rub_salary_hh, get_all_language_vacancies_hh
 from super_job_vacancies import predict_rub_salary_sj, get_all_language_vacancies_sj
 
@@ -31,7 +30,6 @@ def get_salary_info(get_all_language_vacancies, predict_rub_salary):
     return salary_info
 
 def get_salary_statistics_sj():
-    load_dotenv()
     return get_salary_info(get_all_language_vacancies_sj, predict_rub_salary_sj)
 
 def get_salary_statistics_hh():

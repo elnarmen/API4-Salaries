@@ -1,3 +1,4 @@
+from dotenv import load_dotenv
 from terminaltables import AsciiTable, DoubleTable, SingleTable
 from salary_stastics import get_salary_statistics_hh, get_salary_statistics_sj
 
@@ -26,4 +27,5 @@ def main():
 
 
 if __name__ == '__main__':
+    load_dotenv()
     main()
