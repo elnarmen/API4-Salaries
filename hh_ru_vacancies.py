@@ -1,6 +1,5 @@
 import requests
-from salary_statistics_functions \
-    import predict_rub_salary, get_all_languages_salary, get_average_language_salaries
+from salary_statistics_functions import predict_rub_salary
 
 
 def predict_rub_salary_hh(vacancy, currency, salary_from, salary_to):
@@ -38,9 +37,3 @@ def get_all_language_vacancies_hh(language):
         vacancies_found = page_payload['found']
         all_vacancies.extend(page_vacancies)
     return all_vacancies, vacancies_found
-
-
-def get_salary_statistics_hh():
-    return get_all_languages_salary(
-        get_all_language_vacancies_hh, predict_rub_salary_hh, 'RUR', 'from', 'to'
-    )

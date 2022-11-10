@@ -1,8 +1,5 @@
 import os
 import requests
-from dotenv import load_dotenv
-from salary_statistics_functions \
-    import predict_rub_salary, get_all_languages_salary, get_average_language_salaries
 
 
 def get_all_language_vacancies_sj(language):
@@ -30,6 +27,3 @@ def get_all_language_vacancies_sj(language):
         other_results = decoder_response['more']
         page += 1
     return all_vacancies, vacancies_found
-
-def get_salary_statistics_sj():
-    return get_all_languages_salary(get_all_language_vacancies_sj, predict_rub_salary, 'rub', 'payment_from', 'payment_to')
