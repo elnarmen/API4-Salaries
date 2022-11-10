@@ -20,13 +20,15 @@ def get_all_language_vacancies_hh(language: str):
     user_agent = {'User-agent': 'Mozilla/5.0'}
     page = 0
     pages_number = 1
+    moscow_area = 1
+    month_period = 30
     all_vacancies = []
     vacancies_found = 0
     while page < pages_number:
         params = {
             'text': f'name:Программист {language}',
-            'area': 1,
-            'period': 30,
+            'area': moscow_area,
+            'period': month_period,
             'page': page,
         }
         page_responce = requests.get(url, params, headers=user_agent)
