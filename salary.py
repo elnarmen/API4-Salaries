@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
-from terminaltables import AsciiTable, DoubleTable, SingleTable
-from salary_stastics import get_salary_statistics_hh, get_salary_statistics_sj
+from terminaltables import AsciiTable
+from hh_ru_vacancies import get_salary_statistics_hh
+from super_job_vacancies import get_salary_statistics_sj
 
 
 def get_table(title, get_salary_statistics):
@@ -19,6 +20,7 @@ def get_table(title, get_salary_statistics):
 
 
 def main():
+    load_dotenv()
     title_hh = 'HaedHunter Moscow'
     title_sj = 'SuperJob Moscow'
     print(get_table(title_hh, get_salary_statistics_hh))

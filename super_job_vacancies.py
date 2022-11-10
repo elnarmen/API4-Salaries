@@ -1,18 +1,7 @@
 import requests
 import os
-
-
-def predict_rub_salary_sj(vacancy):
-    if vacancy['currency'] != 'rub':
-        return None
-    if vacancy['payment_from'] and vacancy['payment_to']:
-        return (vacancy['payment_from'] + vacancy['payment_to']) / 2
-    if vacancy['payment_from']:
-        return vacancy['payment_from'] * 1.2
-    if vacancy['payment_to']:
-        return vacancy['payment_to'] * .8
-    return None
-
+from salary_statistics_functions import predict_rub_salary, get_all_languages_salary, get_average_language_salaries
+from dotenv import load_dotenv
 
 def get_all_language_vacancies_sj(language):
     url = 'https://api.superjob.ru/2.0/vacancies'
@@ -40,3 +29,5 @@ def get_all_language_vacancies_sj(language):
         page += 1
     return all_vacancies, vacancies_found
 
+def get_salary_statistics_sj():
+    return get_all_languages_salary(get_all_language_vacancies_sj, predict_rub_salary, 'rub', 'payment_from', 'payment_to')

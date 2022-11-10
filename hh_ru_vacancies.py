@@ -1,21 +1,19 @@
 import requests
+from salary_statistics_functions \
+    import predict_rub_salary, get_all_languages_salary, get_average_language_salaries
 
 
-def predict_rub_salary_hh(vacancy: dict):
+def predict_rub_salary_hh(vacancy, currency, salary_from, salary_to):
     if not vacancy['salary']:
         return None
     salary_details = vacancy['salary']
-    if salary_details['currency'] != 'RUR':
-        return None
-    if salary_details['from'] and salary_details['to']:
-        return (salary_details['from'] + salary_details['to']) / 2
-    if salary_details['to']:
-        return salary_details['to'] * .8
-    elif salary_details['from']:
-        return salary_details['from'] * 1.2
-    return None
+    return predict_rub_salary(
+        salary_details, currency,
+        salary_from, salary_to
+    )
 
-def get_all_language_vacancies_hh(language: str):
+
+def get_all_language_vacancies_hh(language):
     url = 'https://api.hh.ru/vacancies'
     user_agent = {'User-agent': 'Mozilla/5.0'}
     page = 0
@@ -42,3 +40,7 @@ def get_all_language_vacancies_hh(language: str):
     return all_vacancies, vacancies_found
 
 
+def get_salary_statistics_hh():
+    return get_all_languages_salary(
+        get_all_language_vacancies_hh, predict_rub_salary_hh, 'RUR', 'from', 'to'
+    )
