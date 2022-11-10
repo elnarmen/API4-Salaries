@@ -1,7 +1,9 @@
-import requests
 import os
-from salary_statistics_functions import predict_rub_salary, get_all_languages_salary, get_average_language_salaries
+import requests
 from dotenv import load_dotenv
+from salary_statistics_functions \
+    import predict_rub_salary, get_all_languages_salary, get_average_language_salaries
+
 
 def get_all_language_vacancies_sj(language):
     url = 'https://api.superjob.ru/2.0/vacancies'

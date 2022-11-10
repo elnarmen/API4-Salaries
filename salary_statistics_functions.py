@@ -1,4 +1,6 @@
-def get_average_language_salaries(predict_salary, vacancies, amount_of_vacancies, currency, salary_from, salary_to):
+def get_average_language_salaries(predict_salary, vacancies,
+                                  amount_of_vacancies, currency,
+                                  salary_from, salary_to):
     total_salary = 0
     vacancies_processed = 0
     for vacancy in vacancies:
