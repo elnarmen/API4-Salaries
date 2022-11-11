@@ -28,9 +28,9 @@ def get_all_language_vacancies_hh(language, superjob_api_key=None):
             'period': month_period,
             'page': page,
         }
-        page_responce = requests.get(url, params, headers=user_agent)
-        page_responce.raise_for_status()
-        page_payload = page_responce.json()
+        page_response = requests.get(url, params, headers=user_agent)
+        page_response.raise_for_status()
+        page_payload = page_response.json()
         pages_number = page_payload['pages']
         page += 1
         page_vacancies = page_payload['items']
